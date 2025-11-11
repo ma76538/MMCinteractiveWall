@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMC Interactive Wall</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #e6edf3;
+            line-height: 1.6;
+            overflow: hidden; /* Hide scrollbar */
+        }
+
+        #app {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: radial-gradient(circle at center, rgba(30, 144, 255, 0.1) 0%, transparent 70%); /* Subtle blue tech effect */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .scene {
+            position: absolute;
+            width: 100%;
+            max-width: 900px;
+            padding: 40px;
+            box-sizing: border-box;
+            background-color: rgba(13, 17, 23, 0.85); /* Slightly transparent dark background for content */
+            border: 1px solid rgba(30, 144, 255, 0.3); /* Blue tech line border */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.4);
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            text-align: center; /* Center content within the scene */
+        }
+
+        .scene.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scene-header h2 {
+            font-size: 2.5em;
+            color: #1e90ff; /* Blue for titles */
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(30, 144, 255, 0.5);
+            padding-bottom: 10px;
+            display: inline-block; /* Make border-bottom fit content */
+        }
+
+        .scene-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #343a40; /* Light gray placeholder */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: #adb5bd;
+            border: 1px dashed #6c757d;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="scene-0" class="scene active">
+            <div class="scene-header">
+                <h2>跨境物流與供應鏈可視化（港澳珠三角跨境卡車）</h2>
+            </div>
+            <div class="scene-content">
+                <p>
+                    <h4>應用內容</h4>
+                    北斗高精度定位（厘米級）與雙向短報文通信，能讓跨境卡車在「珠海-澳門」「深圳-香港」等通道上做到：<br>
+                    * 實時位置追蹤（比 GPS 精準 3～5 倍）<br>
+                    * 跨境通關路線最佳化（預測擁堵、智能選路）<br>
+                    * 貨櫃狀態監控（震動、溫度、開關門紀錄）<br>
+                    * 非法改道與異常停車警報
+                </p>
+                <p>
+                    <h4>價值</h4>
+                    * 對物流企業：降低走失風險、提升準點率<br>
+                    * 對海關/口岸：提升貨車管理效率<br>
+                    * 對企業客戶：供應鏈真正做到「端到端可視化」
+                </p>
+                <div class="image-placeholder">Image Placeholder</div>
+            </div>
+        </div>
+        <div id="scene-1" class="scene">
+            <div class="scene-header">
+                <h2>跨境漁船與海事安全（南中國海—大灣區）</h2>
+            </div>
+            <div class="scene-content">
+                <p>
+                    <h4>應用內容</h4>
+                    北斗短報文天通能力讓漁船在 **無行動網路** 的海域仍可：<br>
+                    * 提交位置、作業海域、回港時間<br>
+                    * 發送求救訊息（無信號也可送達）<br>
+                    * 接收氣象預警、禁漁通知<br>
+                    跨境海事中心（台山、珠海、澳門船政）可共享船舶資訊。
+                </p>
+                <p>
+                    <h4>價值</h4>
+                    * 大幅提升離岸安全<br>
+                    * 降低搜救成本<br>
+                    * 口岸間海上活動資訊同步（避免誤判越界）
+                </p>
+                <div class="image-placeholder">Image Placeholder</div>
+            </div>
+        </div>
+        <div id="scene-2" class="scene">
+            <div class="scene-header">
+                <h2>跨境智慧監管（危險品車輛、冷鏈、工程車）</h2>
+            </div>
+            <div class="scene-content">
+                <p>
+                    <h4>應用內容</h4>
+                    超高精度定位 + 域間資料互通，可支援：<br>
+                    * 危化品：軌跡、偏離警報、急煞車上報<br>
+                    * 冷鏈：溫濕度、震動、位置完整紀錄（防止串改）<br>
+                    * 工程車：珠海—澳門建材運輸智慧審批<br>
+                    定位資料可寫入不可竄改的區塊鏈。
+                </p>
+                <p>
+                    <h4>價值</h4>
+                    * 打擊偽造運輸紀錄<br>
+                    * 提升跨境政府協作<br>
+                    * 危險品運輸更安全、更透明
+                </p>
+                <div class="image-placeholder">Image Placeholder</div>
+            </div>
+        </div>
+        <div id="scene-3" class="scene">
+            <div class="scene-header">
+                <h2>跨境旅遊與移動服務（港澳＋大灣區）</h2>
+            </div>
+            <div class="scene-content">
+                <p>
+                    <h4>應用內容</h4>
+                    北斗定位與室外/室內融合導航：<br>
+                    * 跨境自駕的轉向級導航<br>
+                    * 港珠澳大橋、青茂口岸步行導航<br>
+                    * 景區人流預測（AI + 北斗定位）<br>
+                    * 大灣區旅遊 APP 互通定位資料<br>
+                    未來可結合 AR 做跨境文化導覽。
+                </p>
+                <p>
+                    <h4>價值</h4>
+                    * 旅客體驗提升<br>
+                    * 景區獲得人流熱力數據<br>
+                    * 跨境旅遊一體化
+                </p>
+                <div class="image-placeholder">Image Placeholder</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const scenes = document.querySelectorAll('.scene');
+        let activeScene = 0;
+
+        function showScene(index) {
+            scenes.forEach((scene, i) => {
+                if (i === index) {
+                    scene.classList.add('active');
+                } else {
+                    scene.classList.remove('active');
+                }
+            });
+            activeScene = index;
+        }
+
+        document.addEventListener('keydown', (e) => {
+            const key = parseInt(e.key);
+            if (!isNaN(key) && key >= 0 && key <= 3) {
+                showScene(key);
+            }
+        });
+
+        // Initialize with Scene 0 active
+        showScene(0);
+    </script>
+</body>
+</html>
